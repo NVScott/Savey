@@ -4,10 +4,12 @@ var wishList = [];
 
 chrome.storage.local.get('myList', function(myList) {
     myList = myList['myList'];
-    for (var i = 0; i < myList.length; i++) {
-        wishList.push(myList[i]);
+    if (myList) {
+        for (var i = 0; i < myList.length; i++) {
+            wishList.push(myList[i]);
+        }
     }
-    console.log(wishList)
+    //console.log(wishList)
 
 });
 
