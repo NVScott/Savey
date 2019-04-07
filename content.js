@@ -29,7 +29,7 @@
 // }
 
 $(document).ready(function(){
-    $("div").append("FART");
+    $("#buyNow").append("FART");
     console.log("we did it boys")
 
 });
