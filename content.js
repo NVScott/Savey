@@ -52,5 +52,7 @@ function sendData() {
     chrome.runtime.sendMessage(currentProduct, function(response) {
         console.log(response);
     });
+
+
 }
 
