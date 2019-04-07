@@ -29,6 +29,9 @@
 // }
 
 $(document).ready(function(){
-    var wishBtn = $('<input type="button" value="Add to Wishlist"/>')
-    $("#buyNow").append(wishBtn);
+    var wishBtn = $('<input type="button" value="Add to Savey"/>');
+    wishBtn.css({
+        'background-image': 'linear-gradient(45deg, #c670ca 0%, #25a5c8 52%, #20e275 90%)',
+        });
+    $("#onetime").append(wishBtn);
 });
