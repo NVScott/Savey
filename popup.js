@@ -1,3 +1,5 @@
+
+
 function promptBox() {
     chrome.storage.local.get('myList', function(myList) {
         myList = myList['myList'];
@@ -19,9 +21,12 @@ function promptBox() {
 
 document.addEventListener('DOMContentLoaded', function() {
     promptBox();
+    var btn = document.getElementById('deleteAll');
+    btn.addEventListener('click', function() {
+        chrome.storage.local.clear();
+    })
 });
 
-function requestClear() {
-    pass
-}
+
+
 

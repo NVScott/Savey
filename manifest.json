@@ -4,7 +4,9 @@
   "description": "Curb impulse spending by comparing prices of items on your wishlist.",
   "version": "0.1",
   "permissions": [
-    "storage"
+    "storage",
+    "tabs",
+    "background"
   ],
   "browser_action": {
     "default_popup": "popup.html",
