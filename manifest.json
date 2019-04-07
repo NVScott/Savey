@@ -1,20 +1,32 @@
 {
+  "manifest_version": 2,
   "name": "Savey",
+  "description": "Curb impulse spending by comparing prices of items on your wishlist.",
   "version": "0.1",
-  "description": "Save money by comparing your impulse purchases",
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/savey-16.png",
+      "32": "images/savey-32.png",
+      "48": "images/savey-48.png",
+      "128": "images/savey-128.png"
+    }
   },
-
-  "page_action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-          "16": "images/savey-16.png",
-          "32": "images/savey-32.png",
-          "48": "images/savey-48.png",
-          "128": "images/savey-128.png"
-      }
+  "icons": {
+    "16": "images/savey-16.png",
+    "32": "images/savey-32.png",
+    "48": "images/savey-48.png",
+    "128": "images/savey-128.png"
   },
-  "manifest_version": 2
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
 }
