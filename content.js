@@ -43,6 +43,11 @@ $(document).ready(function(){
     var wishBtn = $('<input type="button" value="Add to Savey"/> ');
     wishBtn.css({
         'background-image': 'linear-gradient(45deg, #c670ca 0%, #25a5c8 52%, #20e275 90%)',
+        'border-radius': '20px',
+        'box-sizing': 'border-box',
+        'display': 'block',
+        'width' : '100%',
+        'height' : '40px',
         });
     wishBtn.attr('id', 'wishBtn');
     $("#selectQuantity").append(wishBtn);
@@ -76,11 +81,14 @@ function comparePrice() {
         'price': response.price,
         'img': response.img};
 
-        var reminder = $('<div style="border: red 5px solid;"> Wait! Before you buy this, remember you have this item in your Savey list, which costs... ' +
-            nearestPrice.price + '<img src=' + nearestPrice.img + '><div>' +
+        var reminder = $('<div id="reminderBox" style="background-image: linear-gradient(45deg, #c670ca 0%, #25a5c8 52%, #20e275 90%); text-align: center; border-radius: 20px"> <strong>Wait!</strong><br/> Before you buy this, remember you have this item in your Savey list, which costs... <br/><strong>' +
+            nearestPrice.price + '</strong><img style="border-radius: 20px; max-width: 90%;" src=' + nearestPrice.img + '><div>' +
             '</div><div>' + nearestPrice.name + '</div></div>');
+
         $( "#priceInsideBuyBox_feature_div" ).append(reminder);
     });
+
+
 
 
 }
