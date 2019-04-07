@@ -48,6 +48,7 @@ $(document).ready(function(){
         'display': 'block',
         'width' : '100%',
         'height' : '40px',
+        'font-weight': 'bold',
         });
     wishBtn.attr('id', 'wishBtn');
     $("#selectQuantity").append(wishBtn);
