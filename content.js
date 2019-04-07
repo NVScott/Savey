@@ -29,7 +29,6 @@
 // }
 
 $(document).ready(function(){
-    $("#buyNow").append("FART");
-    console.log("we did it boys")
-
+    var wishBtn = $('<input type="button" value="Add to Wishlist"/>')
+    $("#buyNow").append(wishBtn);
 });
