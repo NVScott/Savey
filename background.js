@@ -19,3 +19,5 @@ chrome.runtime.onMessage.addListener(
         chrome.storage.local.set({'myList': wishList});
         sendResponse(wishList);
     });
+
+chrome.runtime.sendMessage({msg: 'hello there'});

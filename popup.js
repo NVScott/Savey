@@ -1,12 +1,20 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var links = document.getElementsByTagName("a");
-    for (var i = 0; i < links.length; i++) {
-        (function () {
-            var ln = links[i];
-            var location = ln.href;
-            ln.onclick = function () {
-                chrome.tabs.create({active: true, url: location});
-            };
-        })();
-    }
+function promptBox() {
+    chrome.storage.local.get('myList', function(myList) {
+        myList = myList['myList'];
+        console.log(myList);
+        if (myList) {
+            for (var i = 0; i < myList.length; i++) {
+                $('#items').append(
+                    '<li>' + myList[i].name + '</li>');
+            }
+        }
+        //console.log(wishList)
+
+    });
+
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    promptBox();
 });
+
