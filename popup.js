@@ -7,7 +7,7 @@ function promptBox() {
         if (myList) {
             for (var i = 0; i < myList.length; i++) {
                 $('#items').append(
-                    '<div class="entry"><img id="itemPic" src=' + myList[i].img + '>' +
+                    '<div class="entry"><a href=' + myList[i].url + '><img id="itemPic" src=' + myList[i].img + '></a>' +
                     '<div><div class="text">' + myList[i].name + '</div>' +
                     '<div>' + myList[i].price + '</div></div></div>');
 
@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.addEventListener('click', function() {
         chrome.storage.local.clear();
     })
+    $('body').on('click', 'a', function(){
+        chrome.tabs.create({url: $(this).attr('href')});
+        return false;
+    });
 });
 
 
