@@ -27,6 +27,16 @@
 //         }
 //     }
 // }
+var currentProduct = {
+    'name': $('#productTitle').text().trim(),
+    'price': $('#priceblock_ourprice').text().trim(),
+    'img' : $('#landingImage').attr('src'),
+};
+
+var nearestPrice = {'name': 'why',
+    'price': 'whyyy',
+    'img': 'no'};
+
 
 
 $(document).ready(function(){
@@ -37,20 +47,38 @@ $(document).ready(function(){
     wishBtn.attr('id', 'wishBtn');
     $("#selectQuantity").append(wishBtn);
     $("#wishBtn").click(sendData);
+    comparePrice();
+
+
 
 });
 
-function sendData() {
-    var currentProduct = {
-        'name': $('#productTitle').text().trim(),
-        'price': $('#priceblock_ourprice').text().trim(),
-        'img' : $('#landingImage').attr('src'),
-    };
 
+function sendData() {
     //console.log(currentProduct);
 
     chrome.runtime.sendMessage(currentProduct, function(response) {
         console.log(response);
+    });
+
+
+}
+
+
+function comparePrice() {
+    var currentPrice = currentProduct.price;
+    currentPrice = Number(currentPrice.replace(/[^0-9.-]+/g,""));
+
+    console.log(currentPrice);
+
+    chrome.runtime.sendMessage(currentPrice, function(response) {
+        nearestPrice = {'name': response.name,
+        'price': response.price,
+        'img': response.img};
+
+        var reminder = $('<div style="border: red 5px solid"><img src=' + nearestPrice.img + '><div>' + nearestPrice.name +
+            '</div><div>' + nearestPrice.price + '</div></div>');
+        $( "#priceInsideBuyBox_feature_div" ).append(reminder);
     });
 
 
