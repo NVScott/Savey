@@ -76,8 +76,9 @@ function comparePrice() {
         'price': response.price,
         'img': response.img};
 
-        var reminder = $('<div style="border: red 5px solid"><img src=' + nearestPrice.img + '><div>' + nearestPrice.name +
-            '</div><div>' + nearestPrice.price + '</div></div>');
+        var reminder = $('<div style="border: red 5px solid;"> Wait! Before you buy this, remember you have this item in your Savey list, which costs... ' +
+            nearestPrice.price + '<img src=' + nearestPrice.img + '><div>' +
+            '</div><div>' + nearestPrice.name + '</div></div>');
         $( "#priceInsideBuyBox_feature_div" ).append(reminder);
     });
 
