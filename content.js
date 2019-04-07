@@ -47,10 +47,10 @@ function sendData() {
         'img' : $('#landingImage').attr('src'),
     };
 
-    console.log(currentProduct);
+    //console.log(currentProduct);
 
-    chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
-        console.log(response.farewell);
+    chrome.runtime.sendMessage(currentProduct, function(response) {
+        console.log(response);
     });
 }
 
