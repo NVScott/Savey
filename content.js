@@ -28,10 +28,29 @@
 //     }
 // }
 
+
 $(document).ready(function(){
-    var wishBtn = $('<input type="button" value="Add to Savey"/>');
+    var wishBtn = $('<input type="button" value="Add to Savey"/> ');
     wishBtn.css({
         'background-image': 'linear-gradient(45deg, #c670ca 0%, #25a5c8 52%, #20e275 90%)',
         });
+    wishBtn.attr('id', 'wishBtn');
     $("#selectQuantity").append(wishBtn);
+    $("#wishBtn").click(sendData);
+
 });
+
+function sendData() {
+    var currentProduct = {
+        'name': $('#productTitle').text().trim(),
+        'price': $('#priceblock_ourprice').text().trim(),
+        'img' : $('#landingImage').attr('src'),
+    };
+
+    console.log(currentProduct);
+
+    chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
+        console.log(response.farewell);
+    });
+}
+
