@@ -5,7 +5,10 @@ function promptBox() {
         if (myList) {
             for (var i = 0; i < myList.length; i++) {
                 $('#items').append(
-                    '<li>' + myList[i].name + '</li>');
+                    '<div class="entry"><img id="itemPic" src=' + myList[i].img + '>' +
+                    '<div><div class="text">' + myList[i].name + '</div>' +
+                    '<div>' + myList[i].price + '</div></div></div>');
+
             }
         }
         //console.log(wishList)
@@ -17,4 +20,8 @@ function promptBox() {
 document.addEventListener('DOMContentLoaded', function() {
     promptBox();
 });
+
+function requestClear() {
+    pass
+}
 

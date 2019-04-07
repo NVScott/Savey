@@ -20,4 +20,9 @@ chrome.runtime.onMessage.addListener(
         sendResponse(wishList);
     });
 
-chrome.runtime.sendMessage({msg: 'hello there'});
+
+function ClearList() {
+    console.log('clearing');
+    console.log(myList);
+    chrome.storage.local.clear();
+}

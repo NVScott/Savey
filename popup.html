@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <html>
 
 <style>
@@ -11,6 +14,31 @@
         vertical-align: middle;
         background-image: linear-gradient(45deg, #c670ca 0%, #25a5c8 52%, #20e275 90%);
     }
+
+    #itemPic {
+        max-width: 25%;
+        height: 100px;
+        padding: 5px;
+    }
+
+
+    .text {
+        padding: 5px;
+    }
+
+    .entry {
+        display: inline-flex;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: center;
+    }
+
+    h1 {
+        color: white;
+        text-align: center;
+    }
 </style>
 
 <body>
@@ -18,9 +46,11 @@
 <script src="popup.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
 
-<h1 color="white">  Savey Wishlist</h1>
 
-<ul id="items"></ul>
+<h1 color="white"> Savey Wishlist</h1>
+<button id="#deleteAll" onclick="requestClear()"><i class="fa fa-trash"></i></button>
+
+<div id="items"></div>
 
 </body>
 </html>
