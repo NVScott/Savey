@@ -2,5 +2,19 @@
   "name": "Savey",
   "version": "0.1",
   "description": "Save money by comparing your impulse purchases",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "page_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+          "16": "images/savey-16.png",
+          "32": "images/savey-32.png",
+          "48": "images/savey-48.png",
+          "128": "images/savey-128.png"
+      }
+  },
   "manifest_version": 2
 }
